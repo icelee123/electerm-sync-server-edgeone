@@ -4,11 +4,18 @@
 
 ## 环境变量
 
+生产环境请通过EdgeOne项目设置进行设置
+
 | 变量 | 必填 | 描述 |
 |------|------|------|
 | `JWT_SECRET` | 是 | JWT 签名的密钥 |
 | `JWT_USERS` | 是 | 允许用户的逗号分隔列表 |
 | `KV_BIND_VAR` | 是 | EdgeOne KV 绑定变量名 |
+
+## 安装
+`npm install`
+## 构建
+`npm run build`
 
 ## 其他语言的同步服务器
 

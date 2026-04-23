@@ -4,11 +4,18 @@
 
 ## Environment Variables
 
+please set them via  EdgeOne Project Settings for production environment
+
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `JWT_SECRET` | Yes | Secret key for JWT signing |
 | `JWT_USERS` | Yes | Comma-separated list of allowed users |
 | `KV_BIND_VAR` | Yes | EdgeOne KV binding variable name |
+
+## Install
+`npm install`
+## Build
+`npm run build`
 
 ## Sync Servers in Other Languages
 
