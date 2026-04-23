@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electerm Sync Server</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 640px;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      margin: 4px;
+    }
+    .endpoints {
+      margin-top: 40px;
+      text-align: left;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .endpoints h2 {
+      font-size: 1rem;
+      color: #94a3b8;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .endpoint {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #334155;
+    }
+    .endpoint:last-child { border-bottom: none; }
+    .method {
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      min-width: 48px;
+      text-align: center;
+    }
+    .method-get { background: #064e3b; color: #6ee7b7; }
+    .method-put { background: #1e3a5f; color: #7dd3fc; }
+    .method-post { background: #3b0764; color: #c4b5fd; }
+    .path { font-family: monospace; color: #e2e8f0; font-size: 0.9rem; }
+    .desc { color: #64748b; font-size: 0.85rem; margin-left: auto; }
+    .footer {
+      margin-top: 40px;
+      color: #475569;
+      font-size: 0.8rem;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Electerm Sync Server</h1>
+    <p class="subtitle">
+      基于 EdgeOne KV 的 Electerm 数据同步服务<br>
+      使用云函数 + 键值存储，无需服务器运维
+    </p>
+    <div>
+      <span class="tag">EdgeOne KV</span>
+      <span class="tag">Edge Functions</span>
+      <span class="tag">JWT Auth</span>
+    </div>
+    <div class="endpoints">
+      <h2>API Endpoints</h2>
+      <div class="endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/api/sync</span>
+        <span class="desc">读取同步数据</span>
+      </div>
+      <div class="endpoint">
+        <span class="method method-put">PUT</span>
+        <span class="path">/api/sync</span>
+        <span class="desc">写入同步数据</span>
+      </div>
+      <div class="endpoint">
+        <span class="method method-post">POST</span>
+        <span class="path">/api/sync</span>
+        <span class="desc">测试连接</span>
+      </div>
+      <div class="endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/api/test</span>
+        <span class="desc">健康检查</span>
+      </div>
+    </div>
+    <div class="footer">
+      <a href="https://github.com/icelee123/electerm-sync-server-edgeone" target="_blank">当前项目GitHub</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/electerm/electerm" target="_blank">Electerm</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://cloud.tencent.com/product/edgeone" target="_blank">EdgeOne</a>
+    </div>
+  </div>
+</body>
+</html>
