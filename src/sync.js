@@ -12,11 +12,10 @@ export async function onRequestPut (context) {
     return new Response('invalid token...', { status: 401 })
   }
 
-  const kv = env.KV_BIND_VAR
   const body = await request.json()
   const str = JSON.stringify(body || {})
 
-  await kv.put(auth.id, str)
+  await __KV_BIND_VAR__.put(auth.id, str)
   console.log('💾 Data written for user:', auth.id, '- Size:', str.length, 'bytes')
 
   return new Response('ok', { status: 200 })
@@ -49,8 +48,7 @@ export async function onRequestGet (context) {
     return new Response('invalid token...', { status: 401 })
   }
 
-  const kv = env.KV_BIND_VAR
-  const data = await kv.get(auth.id, { type: 'text' })
+  const data = await __KV_BIND_VAR__.get(auth.id, { type: 'text' })
 
   if (data !== null) {
     console.log('📖 Data read for user:', auth.id, '- Size:', data.length, 'bytes')
